@@ -4,10 +4,11 @@ import { Button } from "@/components/ui/button"
 import DarkModeToggle from "@/components/ui/DarkModeToggle"
 import { shadow } from "@/styles/utils";
 import LogOutButton from "../LogOutButton";
+import { getUser } from "@/auth/server";
 
 
-const Header = () => {
-  const user = true
+const Header = async () => {
+  const user = await getUser()
   return (
     <header className="bg-popover relative flex h-24 w-full items-center justify-between px-3 sm:px-8"
       style={{ boxShadow: shadow }}
